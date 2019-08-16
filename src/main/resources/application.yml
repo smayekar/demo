@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: spring-security-vaadin
+  profiles:
+    active: "dev"
+  main:
+    banner-mode: "off"
+
+server:
+  port: 8081
+  error:
+    whitelabel:
+      enabled: false
+
+vaadin:
+  compatibilityMode: true
+
+---
+spring:
+  profiles: dev
+logging:
+  level:
+    .: DEBUG
+    org.springframework: ERROR
+    com.ctl: DEBUG
+  file: ./log/demo.log
+  pattern:
+    console: "%d %-6level [%t] %logger{25} - %msg %n"
+    file: "%d %-6level [%t] %logger{25} - %msg %n"
